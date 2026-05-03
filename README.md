@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 Активация на Linux/macOS: `source venv/bin/activate`. В Windows **cmd**: `venv\Scripts\activate.bat`.
 
-Корпус (не менее 20 файлов `.pdf`, `.txt`, `.md`) — в `starter_pack/docs/corpus/`. Каталог `data/` в корне репозитория: при выполнении ячейки валидации ноутбука файлы из него копируются в `starter_pack/docs/corpus/` (совпадение имени — перезапись файла; остальные файлы в `corpus/` не удаляются).
+Корпус (не менее 20 файлов `.pdf`, `.txt`, `.md`) — в `starter_pack/docs/corpus/` (см. `starter_pack/docs/corpus/README.md`).
 
 Затем в среде Jupyter / VS Code для файла `Тема19_rag.ipynb` выполняется **Run All**. При первом запуске загружаются веса с Hugging Face (нужен доступ в интернет).
 

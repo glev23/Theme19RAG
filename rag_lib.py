@@ -7,7 +7,6 @@ from __future__ import annotations
 import json
 import random
 import re
-import shutil
 from pathlib import Path
 from typing import Any, Iterable, List, Optional
 
@@ -60,24 +59,6 @@ class BertaEmbeddings(Embeddings):
         if emb.ndim == 1:
             return emb.tolist()
         return emb[0].tolist()
-
-
-def sync_user_corpus(config: dict) -> Path:
-    """Если в user_corpus_dir есть файлы — копирует их в corpus (только добавление/перезапись по имени, без удаления остального корпуса)."""
-    root = Path(config["project_root"])
-    incoming = root / config["user_corpus_dir"]
-    corpus_dir = root / config["corpus_dir"]
-    corpus_dir.mkdir(parents=True, exist_ok=True)
-    if not incoming.exists():
-        return corpus_dir
-    incoming_files = [
-        p
-        for p in incoming.iterdir()
-        if p.is_file() and p.suffix.lower() in {".pdf", ".txt", ".md"}
-    ]
-    for p in incoming_files:
-        shutil.copy2(p, corpus_dir / p.name)
-    return corpus_dir
 
 
 def load_corpus_documents(corpus_dir: Path) -> list[Document]:
