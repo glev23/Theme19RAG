@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LLMRAGAnswer",
+  "type": "object",
+  "required": ["answer", "citations", "confidence", "notes"],
+  "properties": {
+    "answer": {
+      "type": "string",
+      "description": "Основной текст ответа пользователю"
+    },
+    "citations": {
+      "type": "array",
+      "description": "Ссылки на источники из корпуса",
+      "items": {
+        "type": "object",
+        "required": ["file"],
+        "properties": {
+          "file": { "type": "string" },
+          "excerpt": { "type": "string" }
+        }
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Уверенность модели в ответе"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Пояснения, оговорки, отсутствие данных в корпусе"
+    }
+  },
+  "additionalProperties": true
+}

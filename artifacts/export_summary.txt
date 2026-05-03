@@ -1,0 +1,11 @@
+Сохранено:
+architecture.mmd
+architecture.svg
+chunks.csv
+documents.csv
+export_summary.txt
+fig_01.png
+input_profile.json
+kpi_report.csv
+results.csv
+trace.jsonl

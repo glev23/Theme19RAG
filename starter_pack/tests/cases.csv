@@ -1,0 +1,2 @@
+case_id,input_json,expected_json,category,notes
+smoke_1,"{""question"": ""Что такое MFA?""}","{""type"": ""rag_response""}",smoke,минимальный вызов пайплайна

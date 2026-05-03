@@ -1,0 +1,16 @@
+flowchart LR
+  subgraph ingest[Загрузка]
+    D[PDF/TXT/MD] --> L[LangChain loaders]
+    L --> S[RecursiveCharacterTextSplitter]
+  end
+  subgraph index[Индекс]
+    S --> E[BERTA embeddings]
+    E --> F[FAISS VectorStore]
+  end
+  subgraph query[Запрос]
+    Q[Вопрос] --> R[Retriever MMR/top-k]
+    F --> R
+    R --> C[Контекст + цитаты]
+    C --> G[Qwen3-0.6B CPU]
+    G --> J[JSON ответ]
+  end

@@ -1,0 +1,6 @@
+kpi,target,actual,pass,notes
+kpi_corpus,>=20,21,True,E:\Work\georgi\Тема19_rag\starter_pack\docs\corpus
+kpi_questions,>=10,12,True,results.csv rows
+kpi_pipeline_faiss,built,yes,True,FAISS from LangChain
+kpi_citations_rate,>=0.8,1.000,True,доля ответов с непустыми citations
+kpi_groundedness_mean,>=0.8,1.000,True,mean groundedness_for_kpi (human или proxy)
